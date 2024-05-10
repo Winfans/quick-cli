@@ -1,0 +1,66 @@
+{
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "eslint --fix --max-warnings 0",
+      "prettier --write",
+      "git add ."
+    ],
+    "*.{css,less,sass,scss}": [
+      "git add ."
+    ]
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/fs-extra": "^11.0.4",
+    "@types/inquirer": "^9.0.7",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.7",
+    "@types/npmlog": "^7.0.0",
+    "@types/semver": "^7.5.8",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "commitlint": "^19.3.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "husky": "^9.0.11",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "rollup": "^4.16.4",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^29.1.2",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@quick-cli/cli": "link:packages/cli",
+    "@quick-cli/command": "link:packages/command",
+    "@quick-cli/init": "link:packages/init",
+    "@quick-cli/utils": "link:packages/utils",
+    "chalk": "^5.3.0",
+    "commander": "^12.0.0",
+    "execa": "^9.0.1",
+    "fs-extra": "^11.2.0",
+    "inquirer": "^9.2.20",
+    "npmlog": "^7.0.1",
+    "ora": "^8.0.1",
+    "path-exists": "^5.0.0",
+    "semver": "^7.6.2"
+  }
+}
