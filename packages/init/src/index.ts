@@ -1,4 +1,4 @@
-import Command from '@quick-cli/command';
+import { Command } from '@quick-cli/command';
 import { Command as Commander } from 'commander';
 import { log } from '@quick-cli/utils';
 import createTemplate from './createTemplate.js';

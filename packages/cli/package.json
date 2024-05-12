@@ -2,12 +2,13 @@
   "name": "@quick-cli/cli",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
   "keywords": [],
   "author": "",
   "license": "MIT",
   "type": "module",
   "bin": {
-    "quick": "./index.js"
+    "quick": "./dist/index.js"
   }
 }

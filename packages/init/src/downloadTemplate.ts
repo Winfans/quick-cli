@@ -1,11 +1,10 @@
 import { pathExistsSync } from 'path-exists';
 import fse from 'fs-extra';
 import { execa } from 'execa';
-import { log, getVersion } from '@quick-cli/utils';
+import { log } from '@quick-cli/utils';
 import ora from 'ora';
 import { Template, TemplateInfo } from './type';
 import { GITHUB_PATH } from './constant';
-import semver from 'semver';
 
 async function downloadSelectedTemplate(targetPath: string, template: Template) {
   const { npmName } = template;
@@ -23,8 +22,8 @@ export default async function downloadTemplate(templateInfo: TemplateInfo) {
   log.verbose('templateInfo', templateInfo);
   const { targetPath, template } = templateInfo;
 
-  const version = await getVersion(template.npmName);
-  log.verbose('template version', version);
+  // const version = await getVersion(template.npmName);
+  // log.verbose('template version', version);
   const npmPkgFilePath = `${targetPath}/package.json`;
 
   // 判断是否是第二次下载
@@ -33,13 +32,13 @@ export default async function downloadTemplate(templateInfo: TemplateInfo) {
     log.verbose('template cache version', pkg?.version as string);
 
     // 判断版本是否一致
-    if (!semver.eq(version, pkg?.version)) {
-      fse.removeSync(targetPath);
-      fse.mkdirpSync(targetPath);
-    } else {
-      spinner.stop();
-      return;
-    }
+    // if (!semver.eq(version, pkg?.version)) {
+    //   fse.removeSync(targetPath);
+    //   fse.mkdirpSync(targetPath);
+    // } else {
+    //   spinner.stop();
+    //   return;
+    // }
   } else {
     fse.mkdirpSync(targetPath);
   }

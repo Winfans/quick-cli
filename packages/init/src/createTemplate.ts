@@ -22,10 +22,7 @@ function makeTargetPath(template: string) {
   return path.resolve(`${homedir()}/${TEMP_HOME}`, template);
 }
 
-const createTemplate = async (
-  name: string,
-  options: InitCommandOptions,
-): Promise<TemplateInfo | void> => {
+const createTemplate = async (name: string, options: InitCommandOptions): Promise<TemplateInfo> => {
   const { template } = options;
 
   // let addType;

@@ -1,10 +1,10 @@
 import { log } from '@quick-cli/utils';
 import { Command as Commander } from 'commander';
 
-abstract class Command {
+class Command {
   program: Commander;
 
-  get command(): never {
+  get command(): string {
     throw new Error('command must be implements');
   }
 
@@ -12,7 +12,7 @@ abstract class Command {
     throw new Error('command must be implements');
   }
 
-  get options(): never[] {
+  get options(): Array<string | boolean>[] {
     return [];
   }
 
@@ -31,8 +31,8 @@ abstract class Command {
       this.postAction();
     });
     if (this.options?.length) {
-      this.options.forEach((option: [string, string, never]) => {
-        cmd.option(...option);
+      this.options.forEach((option) => {
+        cmd.option(...(option as [string, string, boolean]));
       });
     }
     cmd.action((...args) => {

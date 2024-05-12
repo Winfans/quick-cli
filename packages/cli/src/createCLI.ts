@@ -6,7 +6,7 @@ import fse from 'fs-extra';
 import path from 'node:path';
 import { LOWEST_NODE_VERSION, __dirname } from './constants';
 
-const pkg = fse.readJSONSync(path.resolve(__dirname, '../package.json'));
+const pkg = fse.readJSONSync(path.resolve(__dirname, '../../package.json'));
 
 /**
  * 检查node版本
